@@ -44,7 +44,7 @@ public class DrawerOverlay {
 
             final ItemStack stack = drawer.getStoredItemPrototype();
             if (!stack.isEmpty()) {
-                final MutableComponent stackName = Component.translatable("").append(stack.getDisplayName());
+                final MutableComponent stackName = Component.empty().append(stack.getDisplayName());
 
                 if (showCounts) {
                     if (drawer.getStoredItemCount() == Integer.MAX_VALUE) {

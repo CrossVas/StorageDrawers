@@ -23,6 +23,7 @@ public class Waila implements IWailaPlugin
         registration.addConfig(StorageDrawers.rl("display.content"), true);
         registration.addConfig(StorageDrawers.rl("display.stacklimit"), true);
         registration.addConfig(StorageDrawers.rl("display.status"), true);
+        registration.addConfig(StorageDrawers.rl("display.items"), true);
 
         WailaDrawer provider = new WailaDrawer();
         registration.registerBlockComponent(provider, BlockDrawers.class);
@@ -44,13 +45,21 @@ public class Waila implements IWailaPlugin
             overlay.showContent = config.get(StorageDrawers.rl("display.content"));
             overlay.showStackLimit = config.get(StorageDrawers.rl("display.stacklimit"));
             overlay.showStatus = config.get(StorageDrawers.rl("display.status"));
-
             currenttip.addAll(overlay.getOverlay(blockEntityDrawers));
+
+            if (config.get(StorageDrawers.rl("display.items"))) {
+                currenttip.remove(Identifiers.UNIVERSAL_ITEM_STORAGE);
+            }
+        }
+
+        @Override
+        public int getDefaultPriority() {
+            return TooltipPosition.TAIL;
         }
 
         @Override
         public ResourceLocation getUid () {
-            return null;
+            return StorageDrawers.rl("storage_info");
         }
     }
 }

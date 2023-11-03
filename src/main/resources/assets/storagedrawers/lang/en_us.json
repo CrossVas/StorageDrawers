@@ -60,9 +60,11 @@
     "block.storagedrawers.controller_slave": "Drawer Controller Slave",
 
     "config.jade.plugin_storagedrawers": "Storage Drawers",
+    "config.jade.plugin_storagedrawers.storage_info": "Storage Drawers",
     "config.jade.plugin_storagedrawers.display.content": "Slot Contents",
     "config.jade.plugin_storagedrawers.display.stacklimit": "Stack Limit",
     "config.jade.plugin_storagedrawers.display.status": "Upgrade Status",
+    "config.jade.plugin_storagedrawers.display.items": "Drawer Items",
 
     "container.storagedrawers.upgrades": "Upgrades",
 
